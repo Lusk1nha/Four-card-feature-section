@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
 
 :root {
-  --color-neutral-1: hsl(234, 12%, 34%);
-  --color-neutral-2: hsl(229, 6%, 66%);
-  --color-neutral-3: rgb(250, 250, 250);
+  --background-color: rgb(250, 250, 250);
+  
+  --strong-font-color: hsl(234, 12%, 34%);
+  --weak-font-color: hsl(229, 6%, 66%);
 
 }
 
@@ -14,11 +15,16 @@
   padding: 0;
 
   font-family: 'Poppins', sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  text-rendering: optimizelegibility;
+  letter-spacing: .03em;
 
 }
 
 body {
-  background-color: var(--color-neutral-3);
+  background-color: var(--background-color);
   min-height: 100vh;
 
   display: flex;
@@ -56,14 +62,14 @@ header {
 }
 
 .title {
-  color: var(--color-neutral-1);
+  color: var(--strong-font-color);
   font-size: 6vmin;
   font-weight: 200;
 
 }
 
 .strong-title {
-  color: var(--color-neutral-1);
+  color: var(--strong-font-color);
   font-size: 6vmin;
   font-weight: 600;
 
@@ -72,7 +78,7 @@ header {
 }
 
 .subtitle {
-  color: var(--color-neutral-2);
+  color: var(--weak-font-color);
   font-size: 4vmin;
   font-weight: 400;
 
@@ -104,10 +110,20 @@ header {
 
   box-shadow: 0px 10px 15px 5px rgba(0, 0, 50, 0.1);
 
+  transition: transform 0.3s, box-shadow 0.3s;
+
+}
+
+.component:hover,
+.component:focus {
+  transform: scale(1.03);
+
+  box-shadow: 0px 10px 20px 5px rgba(0, 0, 100, 0.1);
+
 }
 
 .component .componentName {
-  color: var(--color-neutral-1);
+  color: var(--strong-font-color);
   font-size: 1.5rem;
   font-weight: 600;
 
@@ -116,7 +132,7 @@ header {
 }
 
 .component .componentDescribe {
-  color: var(--color-neutral-2);
+  color: var(--weak-font-color);
   font-size: 0.9rem; 
   font-weight: 400;
 
@@ -130,5 +146,7 @@ header {
   position: absolute;
   bottom: 30px;
   right: 30px;
+
+  user-select: none;
 
 }

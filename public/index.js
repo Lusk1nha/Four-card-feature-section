@@ -43,6 +43,7 @@ const createComponents = () => {
     const componentImg = document.createElement('img')
     componentImg.className = 'componentIcon'
     componentImg.src = component.image
+    componentImg.alt = 'component icon'
   
     newComponent.append(componentName, componentDescribe, componentImg)
 
